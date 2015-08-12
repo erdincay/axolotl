@@ -1,5 +1,7 @@
 # Axolotl
 
+![axolotl](https://rawgit.com/macropodhq/axolotl/master/logo.svg "axolotl")
+
 A little bit of stuff to control split variation testing.
 
 More docs to come.
