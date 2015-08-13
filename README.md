@@ -4,6 +4,8 @@
 
 A little bit of stuff to control split variation testing.
 
+https://en.wikipedia.org/wiki/A/B_testing
+
 More docs to come.
 
 # Example Usage
@@ -11,7 +13,6 @@ More docs to come.
 ``` javascript
 import React from 'react';
 import Axo from 'axolotl';
-const axo = new Axo();
 
 class ROFL extends React.Component {
   render() {
@@ -30,6 +31,8 @@ const ROFLVariation =  Axo.VariationEnhance({
   description: 'Instead of just saying lol, say rofl.. and a cat',
   visible: true, // allow users to opt in should they choose
 });
+
+const axo = new Axo([ROFLVariation]); // default internal flux, default non persisting actions
 
 export default class App extends React.Component {
   static childContextTypes = {
