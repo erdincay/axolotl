@@ -1,7 +1,9 @@
 const webpack = require('webpack');
+const path = require('path');
+
 const release = (process.env.NODE_ENV === 'production');
 const plugins = [];
-const jsLoaders = ['babel?optional[]=runtime&stage=1&cacheDirectory=true'];
+const jsLoaders = ['babel?optional[]=runtime&stage=0&cacheDirectory=true'];
 
 if (release)  {
   plugins.push(new webpack.DefinePlugin({
@@ -21,7 +23,6 @@ module.exports = {
   debug: !release,
   devtool: 'source-map',
   entry: {
-    'basic': './examples/basic',
     'todomvc': './examples/flux-todomvc',
   },
   output: {
@@ -29,6 +30,11 @@ module.exports = {
     filename: '[name].js',
   },
   plugins: plugins,
+  resolve: {
+    alias: {
+      'axolotl': path.join(__dirname, './src')
+    },
+  },
   module: {
     preLoaders: [{
       test: /\.js$/,
