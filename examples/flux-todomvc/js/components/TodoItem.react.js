@@ -14,6 +14,12 @@ var TodoTextInput = require('./TodoTextInput.react');
 
 var classNames = require('classnames');
 
+// Axolotl Variation :D
+
+var ROFLVariation = require('../variations/rofl');
+
+// :D
+
 var TodoItem = React.createClass({
 
   propTypes: {
@@ -62,6 +68,7 @@ var TodoItem = React.createClass({
             onChange={this._onToggleComplete}
           />
           <label onDoubleClick={this._onDoubleClick}>
+            <ROFLVariation/>
             {todo.text}
           </label>
           <button className="destroy" onClick={this._onDestroyClick} />
